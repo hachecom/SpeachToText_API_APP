@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+<style >
+    .glyphicon-refresh-animate {
+    -animation: spin .9s infinite linear;
+    -webkit-animation: spin2 .9s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+</style>
+    <div class="container-fluid">
+
+
+        <div clas="row">
+            &nbsp;
+        </div>
+
+        <div class="row">
+            <h4>Select audio</h4>
+        </div>
+        <form method="POST" action="/upload" enctype="multipart/form-data"  class="form-row">
+            <div class="col-lg-6">
+                <input class='btn btn-default' type='file' name="file" id="audio_file" />
+            </div>
+            <div class="col-lg-6">
+                <button class="btn btn-primary" id="upload" type="submit"><i class=""> </i> Upload</button>
+            </div>
+            
+        </form>
+
+         </div>
+
+    <script src="{{bootstrap_find_resource('jquery.js', cdn='jquery')}}"></script>
+<script src="{{bootstrap_find_resource('js/bootstrap.js', cdn='bootstrap')}}"></script>
+    <script >
+        $('#upload').on('click', function(){
+    var iSelector = $(this).find('i:first');
+
+    if(iSelector.hasClass('')) {
+        iSelector.removeClass('')
+        iSelector.addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate')
+
+    }
+
+
+
+});
+    </script>
+{% endblock %}

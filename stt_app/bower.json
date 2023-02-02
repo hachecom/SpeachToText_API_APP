@@ -1,0 +1,22 @@
+{
+  "name": "stt_app",
+  "authors": [
+    "PwC ACE - STEM Team"
+  ],
+  "description": "PwC Speech-to-Text Client APP - MVP",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "react": "^16.1.0",
+    "jquery": "^3.3.1"
+  }
+}

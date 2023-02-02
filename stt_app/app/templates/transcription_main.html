@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+  {%block app_content%}
+
+  <style >
+    .glyphicon-refresh-animate {
+    -animation: spin .9s infinite linear;
+    -webkit-animation: spin2 .9s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<div class="container">
+  <h2>Transcription of {{ transcription.split('.')[0] }}</h2>
+  <p>To edit the transcription click on the textbox , make your changes and then click<b> Save Changes.</b></p>
+  <form method="POST" action="{{url_for('save_changes')}}" >
+    <div class="form-group">
+      <label for="comment">Transcription</label>
+      <textarea class="form-control" rows="5" id="comment" name="text" style="margin: 0px -65px 0px 0px; width: 1205px; height: 233px;"" >{{description}}</textarea>
+
+    </div>
+     <button class="btn btn-primary" id="prueba" type="submit"><i class=""> </i> Save Changes</button>
+     <a href="{{url_for('transcriptions_list')}}" class="btn btn-danger">Cancel</a>
+     <input type="text" style="display:none;"  id="statevalue" name="audio" value="{{transcription}}">
+
+     
+  </form>
+  
+</div>
+
+    <script >
+        $('#prueba').on('click', function(){
+    var iSelector = $(this).find('i:first');
+
+    if(iSelector.hasClass('')) {
+        iSelector.removeClass('')
+        iSelector.addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate')
+
+    }
+
+
+
+});
+    </script>
+
+
+
+{% endblock %}

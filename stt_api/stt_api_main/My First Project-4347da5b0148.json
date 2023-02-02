@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "civic-summer-215620",
+  "private_key_id": "4347da5b01484dd771589e91c4c222b05a0bb604",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCZB89volY2lC0B\n8DCiq2MHx57o8peq8bNjEARzD7a20HVe8tPISSNJjr+Uf8KwV5ZsxHqBQ02YrJkX\nSHPrbnB+oL+5Synz/uL3EI7aYhZ7raCa4L/V+i85fO2SuVEAkTqCGRZrImb+S6My\nQyJLsz6qbHFeo2DVTsHcgJ1Gx1YHtEugHwwJYo0SX6BbvDkVg/KGn2AIgkyKdGz8\nN0WFevZE9OKRryw3Sr6bzDIhGW+HOPlYIcfqYLHzzmerVh6ldKpGZ7pP/mNLak5E\nWIgVQEf28ufd3HtBSJCN7DFdkOSaQcEiIQEhinbNY5BbBwvx0opMKcfG1l1v4VAM\nfez0AHf1AgMBAAECggEAALfVQ7GTQVOCrX2VhE73C6rEVncaS37+daMlASJJJJvw\nWIaVLuYFOpIAtq0UIt48wES2KWMfQ6C+YZCWvVUVrA4t/Ge9sHUXAUwPmBUESMrS\n64LeWOrnbfXUt0ytUkw6CEJjWFfjlZII5J0FPBzFSAsMfwJThjMfaV0DAg7imsvX\n3Uw+Uei4Y+FRpYhAUO20HkFYHZO7sAVgO24YgVVp43Ackx9EqB2OUrDZQ+WwNp/q\naeFDsTASlWz9k9TbJ+MmkiOaKwb6CPGdBTFGOW38Wu4FW00gZi0nZpry7DbcQjrM\nltKy/wFoL8TT8/n08ntggQCPGtsmdOJh8KnIFqoQBQKBgQDT1e/cuvgq/Q7JuqbJ\nUoUERrUX2BJjGAye57f5mb5X8Tfm17hsuM4ndS5AfI2DHXyqfxkxl+VcL5uOGpx9\ntxuYmhDUL32zwVbn1cqJa8PybPcM87N398ww+tTNyp+Wx9AVggHJnXEgEQkv7SBI\nqoYHWQxs4jVU/hVN+2CoIws+0wKBgQC471T2WiWnHn4gyK5z1GeqvwDIK+bI2pKo\nnaF65qSufSNALfgKwmcGtoo5Y0Rorxu6ZsJadGs1qepQlaLi2eR6+/EyoWio8jNI\nyuArXDpOrCIhZy1spHtWgd/JfnqYHF8CH8x1FYy4X0Z2n7NFcDTh3TJ3EnpQgRS9\n/c/IMOUBFwKBgHN3uu5bb+im1ce6GS3F8EGbdRzRJ3yiYEbB0fOZDTsMfkczMRD6\nT00Mv7Bg9BYTHaAl9Yql3Fy6ipUUBlc0VzOAT0oJtQAllAR88ZCkkEN1h9ikgiAT\nj1bnctXV69WZhuAiZG0Mh9xNzO811xIk+TfKH06+owl4Eg7WxiIAMCIHAoGAKrSp\n7BG5LDRwb+Wn03uzTMy6w37P1oYS4/kytwzX7qtbHpD+/I0T+YrhtIrl2z7EqnDc\nZMMJluTcBSvo53Xluzi+5DA92PXFPgQLbDfqBwzc/NW0uafqC3oGUaNxb/rtPbJW\nJpuJWXI29WG/pkNZEudfpfuQX1LPlWgtOU+BMpUCgYBADsfFloYOnQr8jpc2GZ1P\nNISHCFk1vbpM44VAJNROAGqVGBiwE23t4lzJ+Ok9p9h56IzTYlpUB2fdOVsyBU7T\n2tdOPsuGFaNS96K4fhvvXbscYzLAqE5MEXSOfQVHi141oYl2RomS2DT+Z+OoN/t1\n9PIb8AQXskYd2ORGvkGVtw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "sts-123@civic-summer-215620.iam.gserviceaccount.com",
+  "client_id": "113252288612249378507",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sts-123%40civic-summer-215620.iam.gserviceaccount.com"
+}

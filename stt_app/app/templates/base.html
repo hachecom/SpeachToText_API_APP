@@ -1,0 +1,71 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+    {% if title %}{{ title }} - STT{% else %}STT{% endif %}
+{% endblock %}
+{% block navbar %}
+<style type="text/css">
+  #page-content-wrapper {
+    padding: 15px;
+    padding-top: 50px;
+    width: 100%;
+    margin-left: 0px;
+}
+</style>
+
+<nav class="navbar navbar-inverse navbar-fixed-top " >
+    <div class="container-fluid ">
+      <div class="row">
+            {% if current_user.is_authenticated %}
+        <div class="navbar-header col-md-8 col-xs-8" style="font-size: 17px;">
+            
+           <ul class="nav navbar-nav ">
+                <li><a href="{{ url_for('index') }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Speech to Text Experimental MVP</a></li>
+                <li><a href="{{ url_for('transcriptions_list') }}"><span class="glyphicon glyphicon-inbox" aria-hidden="true"></span> My Transcriptions </a></li>
+              <li><a href="{{ url_for('upload') }}"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Transcribe New Audio</a></li>
+               <li><a href="{{ url_for('log') }}"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Activity Log</a></li>
+              
+            </ul>
+        </div>
+        
+          <div class="navbar-header hidden-xs col-md-4 col-sm-4" style="display: flex;justify-content: flex-end;" > 
+          <a href="{{ url_for('logout') }}" style="font-size: 17px;padding-right: 0px;" class="navbar-brand" Onclick="return ConfirmLogout();"><span  class="glyphicon glyphicon-log-out "></span> Log Out</a>
+        </div>
+        {%else:%}
+        <div class="navbar-header col-md-8 col-xs-8" style="font-size: 17px;">
+          <ul class="nav navbar-nav ">
+              <li><a href="{{ url_for('index') }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Speech to Text Experimental MVP</a></li>
+            </ul>
+            </div>
+              {%endif%}
+          </div>
+           </div>
+
+</nav>
+        <div id="page-content-wrapper">
+            
+         
+                <div class="row">
+                    <div class="col-lg-12" >
+                      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+                      {% block app_content %}
+                       {% endblock %}
+                       
+            
+                    </div>
+                </div>
+            
+        </div>
+<script>
+    function ConfirmLogout(){
+        return confirm("Are you sure you want to logout?");
+    }
+</script>
+
+{%endblock%}

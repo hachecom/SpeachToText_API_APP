@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block app_content %}
+
+
+  <style >
+    .glyphicon-refresh-animate {
+    -animation: spin .9s infinite linear;
+    -webkit-animation: spin2 .9s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+</style>
+<div class="container">
+	<div class="row">
+
+
+        <div class="col-md-12">
+
+           {%if not rows:%}
+            <row>
+            <center><h2>You have no transcriptions <span class="glyphicon glyphicon-thumbs-down"></span></h2></center>
+            </row>
+            {%else:%}
+
+        <div class="table-responsive">
+
+              <table id="mytable" class="table table-bordred table-striped">
+
+                   <thead>
+                   <th>Audio Name</th>
+                   <th>Status</th>
+                   <th>Time</th>
+                     <th>Actions</th>
+                   </thead>
+    <tbody>
+
+    {% for row in rows %}
+    <tr>
+
+        <td>{{ row.audioName }}</td>
+            <td>{{ row.status }}</td>
+            <td>{{ row.timestamp }}</td>
+            <td>
+            {%if row.status == 'Processing':%}
+            <form action="{{ url_for('transcription_main') }}"  style ='float: left; padding: 5px;' method="POST"><button class="btn btn-primary" name="audio" value="{{row.audioName}}" data-title="Go To" data-toggle="modal" disabled>Go To</button></form>
+                <form action="{{ url_for('delete_transcription') }}"  style ='float: left; padding: 5px;' method="POST"><button type="submit" class="btn btn-danger" name="delete" data-title="Delete" data-toggle="modal" data-target="#delete" value="{{row.audioName}}" Onclick="return ConfirmDelete('{{row.audioName}}');" disabled><i class="glyphicon glyphicon-trash"> </i></button> </form>
+            {%else:%}
+            <form action="{{ url_for('transcription_main') }}"  style ='float: left; padding: 5px;' method="POST"><button class="btn btn-primary" name="audio" value="{{row.audioName}}" data-title="Go To" data-toggle="modal" >Go To</button></form>
+                <form action="{{ url_for('delete_transcription') }}"  style ='float: left; padding: 5px;' method="POST"><button type="submit" class="btn btn-danger" name="delete" data-title="Delete" data-toggle="modal" data-target="#delete" value="{{row.audioName}}" Onclick="return ConfirmDelete('{{row.audioName}}');"><i class="glyphicon glyphicon-trash"> </i></button> </form>
+            {% endif %}
+
+
+        </td>
+
+    </tr>
+    {% endfor %}
+
+
+    </tbody>
+
+</table>
+
+
+            </div>
+
+            {% endif %}
+        </div>
+	</div>
+</div>
+
+<script>
+        function ConfirmDelete(audioName){
+        return confirm("Are you sure you want to delete " + audioName + " from list?");}
+
+        $('#prueba').on('click', function(){
+    var iSelector = $(this).find('i:first');
+
+    if(iSelector.hasClass('glyphicon glyphicon-trash')) {
+        iSelector.removeClass('glyphicon glyphicon-trash')
+        iSelector.addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate')
+
+    }
+
+
+
+});
+
+</script>
+
+
+    {% endblock %}
